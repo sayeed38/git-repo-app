@@ -1,6 +1,6 @@
 # git-repo-app
 
-Hosted Link Here: [Git-Repo-App](https://toast-a-beeer.netlify.app/).
+Hosted Link Here: [Git-Repo-App](https://git-repo-app.netlify.app/).
 
 ## How to Run Locally
 
