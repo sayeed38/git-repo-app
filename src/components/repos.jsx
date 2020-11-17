@@ -3,10 +3,8 @@ import axios from "axios";
 import "./styles.css";
 
 function Repos(props) {
-  //const history = useHistory();
-
   const userName = props.match.params.username;
-  //console.log(userName);
+
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -16,15 +14,14 @@ function Repos(props) {
         response = await axios.get(
           `https://api.github.com/users/${userName}/repos`
         );
-        //console.log(response.data);
+
         setData(response.data);
       } catch (error) {
         setData([]);
       }
-      //return response.data;
     }
     getData(userName);
-  }, []);
+  }, [userName]);
 
   const handleClick = (name) => {
     props.history.push({

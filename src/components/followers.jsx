@@ -17,7 +17,7 @@ function Followers(props) {
     }
 
     getFollowers();
-  }, []);
+  }, [URL]);
 
   const handleClick = (username) => {
     props.history.push("/repos/" + username);
