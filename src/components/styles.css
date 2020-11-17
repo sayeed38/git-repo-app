@@ -19,9 +19,9 @@ button {
   height: 100%;
   width: 90%;
   justify-content: center;
+  background-color: #dce4ee;
   align-items: center;
   flex-wrap: wrap;
-  border: 1px solid black;
 }
 
 .card-container {
@@ -122,4 +122,27 @@ div > span {
   padding: 7px 10px;
   background-color: green;
   color: white;
+}
+
+.userInfo {
+  display: flex;
+  margin: 10px;
+  height: 10%;
+}
+
+.userID {
+  margin: 20px 10px;
+  font-size: 16px;
+}
+
+.totalrepo {
+  margin: 20px 10px;
+  font-size: 14px;
+}
+
+.routefollowers {
+  margin: 20px 10px;
+  font-size: 14px;
+  color: blue;
+  cursor: pointer;
 }

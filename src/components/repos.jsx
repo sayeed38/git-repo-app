@@ -40,34 +40,42 @@ function Repos(props) {
     });
   };
 
-  if (data.length === 0) {
-    return "Repositories NotFound";
-  }
   return (
-    <div>
-      <div>
-        <h3>{data[0].owner.login}</h3>
-        <h6>Total Repositories: {data.length}</h6>
-        <h6 onClick={routeFollowers}>Follwers</h6>
+    <div style={{ height: "100%" }}>
+      <div className="userInfo">
+        {data.length > 0 && (
+          <>
+            <h3 className="userID">{data[0].owner.login}</h3>
+            <h6 className="totalrepo">Total Repositories: {data.length}</h6>
+            <h6 className="routefollowers" onClick={routeFollowers}>
+              Followers
+            </h6>
+          </>
+        )}
       </div>
       <div className="parent-container">
-        {data.map((repo) => (
-          <div
-            key={repo.name}
-            className="card-container"
-            onClick={() => handleClick(repo.name)}
-          >
-            <img
-              className="repo-pic"
-              src={`${repo.owner.avatar_url}`}
-              alt={"Repo"}
-            />
-            <div className="right-section">
-              <h5 className={"repo__name"}>{repo.name}</h5>
-              <p className="repoDesc">{repo.description}</p>
+        {data.length > 0 &&
+          data.map((repo) => (
+            <div
+              key={repo.name}
+              className="card-container"
+              onClick={() => handleClick(repo.name)}
+            >
+              <img
+                className="repo-pic"
+                src={`${repo.owner.avatar_url}`}
+                alt={"Repo"}
+              />
+              <div className="right-section">
+                <h5 className={"repo__name"}>{repo.name}</h5>
+                <p className="repoDesc">
+                  {repo.description && repo.description.length > 200
+                    ? `${repo.description.substring(0, 120)}....`
+                    : repo.description}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
       </div>
     </div>
   );

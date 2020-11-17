@@ -16,7 +16,7 @@ function App() {
   return (
     <div className="App">
     <Switch>
-      <Route path="/repos/:userId/followers" component={Followers}/>
+      <Route path="/:userId/followers" component={Followers}/>
       <Route path="/repos/:userId/:reponame" component={RepoDetail}/>
       <Route path="/repos/:username" component={Repos}/>
       <Route path="/">

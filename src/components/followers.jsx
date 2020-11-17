@@ -1,4 +1,3 @@
-import Axios from "axios";
 import React from "react";
 import axios from "axios";
 
@@ -10,9 +9,8 @@ function Followers(props) {
     async function getFollowers() {
       let response;
       try {
-        response = axios.get(URL);
-        console.log(response);
-        setFollowers(response);
+        response = await axios.get(URL);
+        setFollowers(response.data);
       } catch (error) {
         console.log("Not found");
       }
@@ -22,16 +20,32 @@ function Followers(props) {
   }, []);
 
   const handleClick = (username) => {
-    props.history.push("/repos" + username);
+    props.history.push("/repos/" + username);
   };
 
   return (
-    <div className="follower-container">
-      {followers.map((follower) => (
-        <div onClick={() => handleClick(follower.username)} key={follower.id}>
-          {follower.name}
-        </div>
-      ))}
+    <div style={{ margin: "5px" }}>
+      <h5>Followers of {props.match.params.userId}</h5>
+      <div className="parent-container">
+        {followers.length > 0
+          ? followers.map((repo) => (
+              <div
+                key={repo.id}
+                className="card-container"
+                onClick={() => handleClick(repo.login)}
+              >
+                <img
+                  className="repo-pic"
+                  src={`${repo.avatar_url}`}
+                  alt={"Repo"}
+                />
+                <div className="right-section">
+                  <h5 className={"repo__name"}>{repo.login}</h5>
+                </div>
+              </div>
+            ))
+          : "No Followers"}
+      </div>
     </div>
   );
 }

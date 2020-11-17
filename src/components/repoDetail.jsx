@@ -8,12 +8,11 @@ function RepoDetail(props) {
 
   React.useEffect(() => {
     async function getData() {
-      const { username, reponame } = props.match.params;
-      //console.log(reponame);
+      const { userId, reponame } = props.match.params;
       let response;
       try {
         response = await axios.get(
-          `https://api.github.com/repos/${username}/${reponame}/readme`
+          `https://api.github.com/repos/${userId}/${reponame}/readme`
         );
         console.log(response);
         setReadMeData(response.data);
@@ -29,13 +28,12 @@ function RepoDetail(props) {
     getData();
   }, []);
 
-  console.log(readMeData);
   return (
     <div className="repoRoot">
       {data
         .filter((repo) => repo.name === props.match.params.reponame)
         .map((repo) => (
-          <div className="left-section">
+          <div key={repo.id} className="left-section">
             <div className="repoDetailImg">
               {console.log(repo.owner.avatar_url)}
               <span
@@ -78,7 +76,7 @@ function RepoDetail(props) {
         {Object.keys(readMeData).length !== 0 ? (
           <div
             dangerouslySetInnerHTML={{
-              __html: markdown.toHTML(window.atob(data.content)),
+              __html: markdown.toHTML(window.atob(readMeData.content)),
             }}
           ></div>
         ) : null}
