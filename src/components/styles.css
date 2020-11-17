@@ -1,0 +1,125 @@
+input {
+  padding: 12px 10px;
+  margin: 10px;
+  justify-content: center;
+  width: 45%;
+}
+
+button {
+  margin: 10px;
+  padding: 12px 10px;
+  width: 15%;
+  background-color: black;
+  color: whitesmoke;
+  cursor: pointer;
+}
+.parent-container {
+  margin: 10px;
+  display: flex;
+  height: 100%;
+  width: 90%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  border: 1px solid black;
+}
+
+.card-container {
+  display: flex;
+  height: 100px;
+  width: 45%;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.right-section {
+  padding: 2px;
+  margin: 2px 5px;
+  height: 85px;
+  width: 80%;
+}
+
+.repo-pic {
+  width: 75px; /* width of container */
+  max-height: 75px; /* height of container */
+  object-fit: contain;
+  margin: 5px;
+  border-radius: 50%;
+}
+
+.repo__name {
+  padding: 1px;
+  margin: 1px;
+  color: blue;
+  font-size: 16px;
+}
+
+.repoDesc {
+  padding: 1px;
+  margin: 1px;
+  font-size: 14px;
+}
+
+.repoRoot {
+  padding: 10px;
+  display: flex;
+  direction: column;
+  height: 100%;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 30%;
+}
+
+.repoDetailImg {
+  margin: 20px, 50px;
+  height: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 1px solid black;
+}
+
+.repoDetailMedia {
+  background-repeat: no-repeat;
+  background-size: contain;
+  border-radius: 50%;
+  min-height: 150px;
+  min-width: 150px;
+}
+
+.repo-tags {
+  height: 50%;
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  margin: 50px 50px 10px 50px;
+}
+
+div > span {
+  padding: 2px 5px;
+  background-color: lightgray;
+  margin: 5px;
+  margin-top: 0px;
+  border: 1px solid rgb(36, 33, 33);
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.repo-button {
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 150px;
+  padding: 7px 10px;
+  background-color: green;
+  color: white;
+}

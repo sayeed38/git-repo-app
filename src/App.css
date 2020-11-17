@@ -1,0 +1,10 @@
+.App {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 75%;
+  width: 75%;
+  display: grid;
+}
